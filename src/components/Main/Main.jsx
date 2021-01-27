@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from '@material-ui/core';
 
 import useStyles from './styles'
+import Form from './Form/Form';
 
 const Main = () => {
 
@@ -17,7 +18,9 @@ const Main = () => {
                     Try to say soemthing
                 </Typography>
                 <Divider />
-                 {/* form */}
+                <Divider />
+                <Divider />
+                <Form />
             </CardContent>
             <CardContent className={classes.CardContent}> 
                 <Grid container spacing = {2}>
