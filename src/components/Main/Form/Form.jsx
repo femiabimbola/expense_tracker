@@ -5,7 +5,7 @@ import useStyles from './styles';
 
 const Form = () => {
 
-    const classes = useStyles();
+  const classes = useStyles();
 
     return (
         <div>
@@ -24,15 +24,22 @@ const Form = () => {
                         </Select>
                     </FormControl>
                 </Grid>
-                <Grid item xs = {6}>
+                <Grid item xs={6}>
                     <FormControl fullWidth>
-                        <InputLabel> Category</InputLabel>
-                        <select>
-                            <MenuItem value = "business"> Business </MenuItem>
-                        </select>
-                        
+                        <InputLabel> Category </InputLabel>
+                        <Select>
+                            <MenuItem value = 'Business'> Business </MenuItem>
+                            <MenuItem value = 'Salary'> Salary </MenuItem>
+                        </Select>
                     </FormControl>
                 </Grid>
+                <Grid item xs = {6}>
+                    <TextField type="number" label="Amount" fullWidth />
+                </Grid>
+                <Grid item xs = {6}>
+                    <TextField type="date" label="Date" fullWidth />
+                </Grid>
+                <Button className={classes.button} variant="outlined" color="primary" fullWidth> Create </Button>
             </Grid>
         </div>
     )
