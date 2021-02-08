@@ -8,13 +8,7 @@ import useStyles from './styles'
  
 const List = () => {
     const classes = useStyles();
-    const { deleteTransaction } = useContext(ExpenseTrackerContext);
-
-    const transactions = [
-        { id: 1, type: "Income", category: "Salary", amount:50, date: new Date().toDateString()},
-        { id: 2, type: "Expense", category: "Woman", amount:250, date: new Date().toDateString()},
-        { id: 3, type: "Income", category: "Salary", amount:250, date: new Date().toDateString()}
-    ];
+    const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext);
 
     return (
         <MUList dense= {false} className={classes.list}>
