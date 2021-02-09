@@ -19,8 +19,8 @@ const Form = () => {
   
   const createTransaction = () => {
         const transaction = {...formData, amount:Number(formData.amount), id:idv4() }
-        addTransaction(transaction)
-        setFormData(initialState)
+        addTransaction(transaction);
+        setFormData(initialState);
   }
 
     return (
@@ -43,7 +43,7 @@ const Form = () => {
                 <Grid item xs={6}>
                     <FormControl fullWidth>
                         <InputLabel> Category </InputLabel>
-                        <Select value={formData.type} onchange = {(e) => setFormData({...formData, Category:e.target.value})}>
+                        <Select value={formData.type} onChange = {(e) => setFormData({...formData, category:e.target.value})}>
                             <MenuItem value = 'Business'> Business </MenuItem>
                             <MenuItem value = 'Salary'> Salary </MenuItem>
                         </Select>
