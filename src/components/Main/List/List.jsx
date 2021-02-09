@@ -10,6 +10,7 @@ const List = () => {
     const classes = useStyles();
     const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext);
 
+
     return (
         <MUList dense= {false} className={classes.list}>
             {transactions.map((transaction) => (
@@ -20,9 +21,9 @@ const List = () => {
                                 <MoneyOff/>
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary = { transaction.category} secondary ={`₦${transaction.amoun} - ${transaction.date}`} />
+                        <ListItemText primary = { transaction.category} secondary ={`₦${transaction.amount} on ${transaction.date}`} />
                         <ListItemSecondaryAction>
-                            <IconButton edge="end" aria-label="delete" onClick="">
+                            <IconButton edge="end" aria-label="delete" onClick={() => deleteTransaction(transaction.id)}>
                                 <Delete />
                             </IconButton>
                         </ListItemSecondaryAction>
