@@ -11,7 +11,7 @@ const Details = ({ title }) => {
        <Card className={ title === 'Income' ? classes.income : classes.expense}>
            <CardHeader title= {title} />
            <CardContent>
-               <Typography variant ="h5"> ₦1,000 only</Typography>
+               <Typography variant ="h5"> ₦1,000 </Typography>
                {/* < Doughnut data = "data" /> */}
            </CardContent>
        </Card> 
