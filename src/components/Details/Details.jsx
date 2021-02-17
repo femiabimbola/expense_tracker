@@ -7,14 +7,14 @@ import useStyles from './styles'
 
 const Details = ({ title }) => {
     const classes = useStyles();
-    const { total, chaerData } = useTrasanctions(title);
+    const { total, chartData } = useTrasanctions(title);
 
     return (
        <Card className={ title === 'Income' ? classes.income : classes.expense}>
            <CardHeader title= {title} />
            <CardContent>
-               <Typography variant ="h5"> ₦1,000 </Typography>
-               {/* < Doughnut data = "data" /> */}
+               <Typography variant ="h5"> ₦{total} </Typography>
+               < Doughnut data = {chartData} />
            </CardContent>
        </Card> 
 
