@@ -7,6 +7,7 @@ import { v4 as idv4} from 'uuid'
 import useStyles from './styles';
 import { incomeCategories, expenseCategories } from '../../../constant/categories';
 import formatDate from '../../../utils/formatDate';
+import CustomizedSnackbar from "../../Snackbar/Snackbar";
 
 
 const initialState = {
@@ -22,11 +23,13 @@ const Form = () => {
   const [formData, setFormData] = useState(initialState)
   const { addTransaction } = useContext(ExpenseTrackerContext)
   const { segment } = useSpeechContext();
+  const {open, setOpen } = useState(false)
   
   const createTransaction = () => {
         if(Number.isNaN(Number(formData.amount)) || formData.date.includes('-')) return;
         const transaction = {...formData, amount:Number(formData.amount), id:idv4() };
         addTransaction(transaction);
+        setOpen(true);
         setFormData(initialState);
   }
 
@@ -74,6 +77,7 @@ const Form = () => {
     return (
         <div>
             <Grid container spacing={2}>
+                <CustomizedSnackbar open={open} setOpen={setOpen}/>
                 <Grid item xs={12}>
                     <Typography align = "center" variant = "subtitle2" gutterBottom >
                         { segment ? (
